@@ -1,24 +1,25 @@
 @import"variables.css";
 @import"reset.css";
 
-nav{
+nav {
     background-color: var(--background-color);
     box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
     border-bottom: 1px solid;
 }
-nav ul{
+
+nav ul {
     width: 100%;
     list-style: none;
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
-nav li{
+
+nav li {
     height: 50px;
-
 }
-nav a{
+
+nav a {
     height: 100%;
     padding: 0 30px;
     text-decoration: none;
@@ -26,14 +27,25 @@ nav a{
     align-items: center;
     color: #000000;
 }
-nav a:hover{
+
+nav a:hover {
     background-color: bisque;
 }
-.museum-logo{
+
+.logo-achor {
+    padding: 0;
+}
+
+.museum-logo {
     display: flex;
     justify-content: center;
     align-items: center;
     padding-left: 1rem;
+}
+
+.museum-logo img {
+    width: 73px;
+    height: 73px;
 }
 
 .sidebar {
@@ -45,12 +57,13 @@ nav a:hover{
     z-index: 999;
     background-color: var(--background-color);
     backdrop-filter: blur(10px);
-    box-shadow: -10px 0 -10px rgba(0, 0, 0, 0.1);
+    box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
     display: none;
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
 }
+
 .sidebar li {
     width: 100%;
 }
@@ -77,6 +90,10 @@ nav a:hover{
     height: 66px;
     background-color: var(--header-one-color);
     border-radius: 0.5rem;
+}
+
+.program-div {
+    display: contents;
 }
 
 .main-section {
@@ -122,6 +139,62 @@ nav a:hover{
     background-color: var(--button-one);
     color: var(--background-color);
     cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.view-more-btn button:hover {
+    background-color: var(--botton-one-active);
+}
+
+footer img {
+    width: 73px;
+}
+
+button a {
+    text-decoration: none;
+    color: whitesmoke;
+    font-weight: 500;
+    font-family: 'Montserrat', sans-serif;
+}
+
+@media (min-width: 380px) {
+    .hide-on-mobile {
+        display: none;
+    }
+
+    .sidebar {
+        width: 100%;
+    }
+
+    .menu-button {
+        display: flex;
+    }
+
+    nav ul {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    .footer-desktop {
+        display: none;
+    }
+
+    .footer-mobile {
+        font-size: 14px;
+    }
+
+    .tablet-img {
+        display: none;
+    }
+
+    .desktop-img {
+        display: none;
+    }
+
+    .program-one .h4-desktop {
+        display: none;
+    }
 }
 
 @media (min-width: 901px) {
@@ -133,23 +206,33 @@ nav a:hover{
 }
 
 .program-section {
-    padding: 16px 0 16px 0;
+    padding: 10px 0 10px 0;
 }
 
+
 @media (min-width: 430px) {
-    .tablet-img, .desktop-img {
+    .tablet-img,
+    .desktop-img {
         display: none;
     }
 
     .program-section .program-one .h4-desktop {
         display: none;
     }
+
 }
+
+.mobile-img {
+    margin-bottom: -4px;
+    width: 100%;
+}
+
 
 @media (min-width: 500px) {
     .mobile-img {
         display: none;
     }
+
     .tablet-img {
         display: grid;
         grid-column: 1;
@@ -185,7 +268,7 @@ nav a:hover{
 
 @media (min-width: 740px) {
     .program-section {
-        padding: 8px 24px 40px 24px;
+        padding: 12px 16px 12px 16px;
     }
 
     .program-one h3 {
@@ -194,6 +277,7 @@ nav a:hover{
 
     .program-one .h4-desktop {
         font-size: 1rem;
+        padding: 8px;
     }
 
     .program-one .tickets-button button {
@@ -201,17 +285,17 @@ nav a:hover{
     }
 
     .program-one .tickets-button button {
-        background-color: var(--botton-one-active);
+        background-color: var(--button-one);
         color: white;
         width: 178px;
-        height: 28px;
+        height: 32px;
         border-radius: 8px;
         border: 0;
         font-size: 14px;
     }
 }
 
-@media  (min-width: 1000px) {
+@media (min-width: 1000px) {
     .tablet-img {
         display: none;
     }
@@ -222,12 +306,9 @@ nav a:hover{
     }
 }
 
-.program-header h2 {
-    padding: 24px 0 8px 0;
-}
-
 .program-one {
     background-color: var(--header-one-color);
+    padding-left: 8px;
 }
 
 .program-one h3 {
@@ -235,31 +316,28 @@ nav a:hover{
 }
 
 .program-one h4 {
-    padding: 4px 0 4px 0;
+    padding: 8px 0 8px 0;
     color: rgba(0, 0, 0, 0.50);
     font-size: 14px;
     display: flex;
     text-align: center;
 }
 
-.program-one h3, .program-one h4, .program-one button {
-    margin-left: 16px;
-}
-
 @media (min-width: 500px) {
+
     .program-one h3,
     .program-one h4,
-    .program-one .tickets-button {
+    .program-one .tickets-button button {
         padding: 0;
         margin: 0;
     }
 }
 
 .program-one button {
-    background-color: var(--botton-one-active);
+    background-color: var(--button-one);
     color: white;
-    width: 98px;
-    height: 22px;
+    width: 108px;
+    height: 24px;
     border-radius: 8px;
     border: 0;
     font-size: 10px;
@@ -271,20 +349,26 @@ nav a:hover{
 
 .tickets-button button {
     cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.tickets-button button:hover {
+    background-color: var(--botton-one-active);
 }
 
 footer {
-    background-color:#E6E6FA;
+    background-color: #E6E6FA;
     color: #000000;
     padding: 1rem;
     display: grid;
-    grid-template-columns: repeat(2,auto);
+    grid-template-columns: repeat(2, auto);
     grid-template-rows: auto auto;
     align-items: start;
     justify-content: space-between;
 }
 
-.left-content, .right-content {
+.left-content,
+.right-content {
     max-width: 300px;
 }
 
@@ -355,6 +439,10 @@ footer {
     font-size: 20px;
 }
 
+.span-one svg {
+    margin: 4px 4px 0 0;
+}
+
 .span-one i {
     margin-right: 4px;
 }
@@ -373,43 +461,104 @@ footer {
     padding-top: 32px;
     font-size: 14px;
 }
-/*Small screens*/
-@media (min-width: 430px){
-    .hide-on-mobile{
+
+.footer-desktop {
+    grid-template-columns: repeat(3, 1fr);
+    padding: 32px 0 16px 0;
+}
+
+.footer-desktop div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mail-div {
+    border-left: 1px solid;
+    border-right: 1px solid;
+}
+
+.mail-div p {
+    line-height: 1.5;
+}
+
+.social-media-icons {
+    grid-column: 2;
+    padding-top: 32px;
+    gap: 32px;
+}
+
+.footer-text {
+    grid-row: 3;
+    grid-column: 2;
+    padding-top: 32px;
+}
+
+.footer-desktop div p {
+    line-height: 1.5;
+}
+
+@media (min-width: 430px) {
+    .hide-on-mobile {
         display: none;
     }
-    .sidebar{
+
+    .sidebar {
         width: 100%;
     }
-    .menu-button{
+
+    .menu-button {
         display: flex;
     }
-    nav ul{
+
+    nav ul {
         display: flex;
         justify-content: flex-end;
         align-items: center;
     }
-}
-/*Medium screens*/
-@media (min-width: 744px) {
-}
-/*Large screens*/
-@media (min-width: 1024px){
-.hide-on-mobile{
-    display: flex;
-}
-.menu-button{
-    display: none;
-}
-nav ul{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-}
-@media (min-width: 1280px){
+
+    .footer-desktop {
+        display: none;
+    }
+
+    .footer-mobile {
+        font-size: 1rem;
+    }
 }
 
-@media (min-width:1440px){
+@media (min-width: 500px) {
 
+    .program-one h3,
+    .program-one h4,
+    .program-one,
+    .tickets-button {
+        margin-left: 0;
+        padding: 8px;
+    }
+}
+
+@media (min-width: 900px) {
+    .footer-mobile {
+        display: none;
+    }
+
+    .footer-desktop {
+        display: grid;
+    }
+}
+
+@media (min-width: 1024px) {
+    .hide-on-mobile {
+        display: flex;
+    }
+
+    .menu-button {
+        display: none;
+    }
+
+    nav ul {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 }
